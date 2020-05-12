@@ -1,4 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
+#include <errno.h>
+#include <string.h>
+#include <assert.h>
+#include <math.h>
+
 
 #define HEADER_SIZE 14
 #define INFO_SIZE 40
@@ -54,14 +62,17 @@ void bmpCalcSNR(const char *fileName, BMP *new_bmp, int width, int height, long 
 
 /* original version */
 void rgbaToBw(uint32_t *data, int width, int height, long stride); 
+char *getOutputImageFile(void);
 
 /* version 1 : using RGB table */
 #define TABLE_SIZE 256
 float table_R[TABLE_SIZE]; 
 float table_G[TABLE_SIZE];
 float table_B[TABLE_SIZE];
+void before(void);
 void rgbaToBw_v1(uint32_t *data, int width, int height, long stride); 
 void generateRGBTable();
+void after(void);
 
 /* version 2 : using pointer instead of bitwise operation*/
 void rgbaToBw_v2(uint32_t *pixel, int width, int height, long stride);
