@@ -30,6 +30,9 @@ neon_c: $(OBJS) neon_c_rgbaToBw.c
 dither: $(OBJS) dither.c
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
+dither2: $(OBJS) dither2.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
 clean:
 	rm -f $(EXECUTABLE) *.o perf.* ./pictures/01_*.bmp
 
