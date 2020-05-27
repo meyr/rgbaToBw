@@ -19,7 +19,7 @@ void rgbaToBw(uint32_t *data, int width, int height, long stride)
 			r = (uint8_t *) data + 2;
 			g = (uint8_t *) data + 1;
 			b = (uint8_t *) data;
-			bw = (*r * 0.299) + (*g * 0.587) + (*b * 0.114);
+			bw = ((*r * 153) + (*g * 301) + (*b * 58)) >> 9;
 			if (row != 0)
 				bw += q_error[col];
 			if(bw >= 0xf0) {
