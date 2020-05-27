@@ -33,12 +33,12 @@ void rgbaToBw(uint32_t *data, int width, int height, long stride)
 				q_err = bw - q_bw;
 			}
 
-			q_error[col - 1] = q_err >> 3;
+			q_error[col - 1] = q_err >> 2;		// 4
 			if (col == 0)
-				q_error[col] = q_err >> 1;
+				q_error[col] = q_err >> 1;	// 8
 			else
-				q_error[col] = q_err >> 2;
-			q_error[col + 1] = q_err >> 1;
+				q_error[col] = q_err >> 2;	// 4
+			q_error[col + 1] = q_err >> 1;		// 8
 
 			*r = *g = *b = q_bw;
 
