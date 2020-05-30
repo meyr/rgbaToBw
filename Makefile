@@ -33,6 +33,10 @@ dither: $(OBJS) dither.c
 dither2: $(OBJS) dither2.c
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
+dither3: $(OBJS) dither3.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+
 clean:
 	rm -f $(EXECUTABLE) *.o perf.* ./pictures/01_*.bmp
 
