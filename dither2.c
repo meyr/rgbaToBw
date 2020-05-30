@@ -8,7 +8,8 @@ void rgbaToBw(uint32_t *data, int width, int height, long stride)
 {
 	int32_t row, col;
 	uint8_t *r, *g, *b;
-	uint32_t bw, q_bw, pixel_index;
+	uint32_t q_bw, pixel_index;
+	int32_t bw;
 	int8_t q_err, q_error_right, *q_error_array, *q_error;
 
 	q_error_array = calloc(1, width + 2);
